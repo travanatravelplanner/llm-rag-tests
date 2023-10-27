@@ -3,12 +3,20 @@ Travana LLM testing with RAG
 
 ### Innstall Required Libraries
 ----
+```
 google_cloud_aiplatform
+
 google-generativeai
+
 langchain
+
 openai
+
 python-dotenv
+
 deeplake
+```
+Run: ```pip install langchain openai python-dotenv deeplake google-generativeai google_cloud_aiplatform```
 
 ### Steps to Reproduce
 ----
