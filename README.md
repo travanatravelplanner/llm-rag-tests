@@ -25,7 +25,7 @@ Run: ```pip install langchain openai python-dotenv deeplake google-generativeai 
 1. Install the required libraries and start running the code. You should create a `.env` file to store the API keys.
 2. Prompt Engineering can be done at: `_template`, `template` and `default_question` variables.
 3. Do not change the `{context}`, `{chat_history}` and `{question}` objects, it might result in Validation Errors.
-4. Run `streamlit run app.py`
+4. Run `streamlit run app.py`  or use `palm_rag_sys_v1.ipynb` file for testing in jupyter notebook.
 
 ### Further Steps
 ----
