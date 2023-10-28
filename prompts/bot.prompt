@@ -1,0 +1,102 @@
+We have a specialized company retrieval system. Your task is to analyze a list of companies provided by the user and suggest the most relevant attribute values that capture the essence of the user's preferences. These suggested values will then assist in retrieving similar companies from a database that align with the user's interests.
+
+The attributes available for each company are:
+['name', 'country_code', 'region', 'city', 'short_description', 'categories', 'category_groups', 'total_funding_usd_binned', 'founded_year', 'employee_count_ordinal']
+
+Based on the user's list, suggest the most relevant values for the following attributes:
+['categories', 'category_groups', 'founded_year', 'employee_count_ordinal', 'total_funding_usd_binned']
+
+Mappings:
+
+total_funding_usd_binned:
+Bins: [0, 100000, 675000, 1000000, 5000000, 10000000, float('inf')]
+Labels: ['No', 'Low', 'Moderate', 'High', 'Very High', 'Extremely High']
+
+employee_count_ordinal:
+Mappings: [1, 2, 3, 4, 5, 6, 7, 8]
+
+Examples:
+
+Input: [['name': 'Alternative Fuels Americas',
+  'country_code': 'USA',
+  'region': 'Florida',
+  'city': 'Hollywood',
+  'short_description': 'AFAI is an alternative energy company pioneering a vertically integrated biodiesel process and the development of above-ground oil fields.',
+  'categories': ['Energy', 'Oil and Gas', 'Renewable Energy'],
+  'category_groups': ['Energy', 'Natural Resources', 'Sustainability'],
+  'total_funding_usd_binned': 'No',
+  'founded_year': 2010,
+  'employee_count_ordinal': '1'],
+ ['name': 'e2e-assure',
+  'country_code': 'GBR',
+  'region': 'Oxfordshire',
+  'city': 'Oxford',
+  'short_description': 'E2e-assure is a provider of end-to-end security operations for online payment systems.',
+  'categories': ['Network Security', 'Security'],
+  'category_groups': ['Information Technology', 'Privacy and Security'],
+  'total_funding_usd_binned': 'Extremely High',
+  'founded_year': 2013,
+  'employee_count_ordinal': '2'],
+  ['name': 'Interelate',
+  'country_code': 'USA',
+  'region': 'Minnesota',
+  'city': 'Minneapolis',
+  'short_description': 'Interelate provider of customer analytics solutions that enable clients to acquire, retain and grow customers.',
+  'categories': ['Analytics', 'Customer Service', 'Internet', 'Marketing'],
+  'category_groups': ['Data and Analytics',
+   'Internet Services',
+   'Other',
+   'Professional Services',
+   'Sales and Marketing'],
+  'total_funding_usd_binned': 'Extremely High',
+  'founded_year': 1999,
+  'employee_count_ordinal': '1']]
+
+Suggested Attributes: [
+  "categories": ["Technology", "Renewable Energy", "Security"],
+  "category_groups": ["Information Technology", "Sustainability"],
+  "total_funding_usd_binned": ["High", "Very High", "Extremely High"],
+  "employee_count_ordinal": ["1", "2", "3", "4"]
+]
+
+
+
+Input: [['name': 'TopAdmit Holdings Pte Ltd',
+  'country_code': 'TWN',
+  'region': "T'ai-pei",
+  'city': 'Taipei',
+  'short_description': 'Top Admit is\xa0an online college admissions and essay editing company.',
+  'categories': ['Consulting', 'Education', 'Higher Education'],
+  'category_groups': ['Education', 'Professional Services'],
+  'total_funding_usd_binned': 'No',
+  'founded_year': 2009,
+  'employee_count_ordinal': '1'],
+ ['name': 'Carbon Collective',
+  'country_code': 'USA',
+  'region': 'California',
+  'city': 'Albany',
+  'short_description': 'Carbon Collective is a financials services company.',
+  'categories': ['Financial Services'],
+  'category_groups': ['Financial Services'],
+  'total_funding_usd_binned': 'High',
+  'founded_year': 2020,
+  'employee_count_ordinal': '1'],
+ ['name': 'zigeer.com',
+  'country_code': 'CHN',
+  'region': 'Beijing',
+  'city': 'Haidian',
+  'short_description': 'zigeer.com is an online retail platform for designers and enterprises.',
+  'categories': ['B2C', 'Consumer Goods', 'E-Commerce'],
+  'category_groups': ['Commerce and Shopping', 'Consumer Goods', 'Other'],
+  'total_funding_usd_binned': 'High',
+  'founded_year': 2015,
+  'employee_count_ordinal': None]]
+Suggested Attributes: [
+  "categories": ["Consulting", "Education", "Financial Services", "E-Commerce"],
+  "category_groups": ["Education", "Professional Services", "Financial Services", "Commerce and Shopping"],
+  "founded_year": "2010s era",
+  "total_funding_usd_binned": "High",
+  "employee_count_ordinal": "1"
+]
+
+Please, analyze the list of companies for input = "{user_input}", and reply ONLY with the most relevant attribute values that capture the user's interests in a JSON format.
