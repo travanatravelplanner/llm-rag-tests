@@ -30,5 +30,7 @@ Run: ```pip install langchain openai python-dotenv deeplake google-generativeai 
 ### Further Steps
 ----
 ☑️ Adding more flexibility: Instead of VertexAI, integrate ChatVertexAI.
-☑️ Exploring ConversationalRetrievalQA chain along with ConversationalBufferMemory
+
+☑️ Exploring ConversationalRetrievalQA chain along with ConversationalBufferMemory.
+
 - Exploring document similarity search methods.
