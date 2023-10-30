@@ -1,6 +1,12 @@
 # llm-rag-tests
 Travana LLM testing with RAG
 
+# To-do by Team
+- Test the model at - `nyc_rag_sys_palm_v1.ipynb`
+- I've provided the palm key as a zip file in whatsapp group
+- Get the activeloop token id from the invitation I've sent. If not working let me know.
+- Save all your keys in .env file.
+
 ### Innstall Required Libraries
 ----
 ```
